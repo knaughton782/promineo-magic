@@ -1,0 +1,32 @@
+***INSTRUCTIONS******************************
+
+This week you will be working together as a team to create a full CRUD application.
+Your console CRUD application will need to use a database to store all the application data.
+You need to have at least 3 entities.
+Users should be able to interact via the console (i.e. Scanner(System.in)))
+You can organize your code however you like, but I would encourage you to follow an organizational
+model similar to the one in last weeks video with packages dao, entity, and if you need, service.
+The project must be on GitHub. Use git to collaborate.
+Everyone will be graded on their individual contributions.
+This project is worth 200 points as it is taking the place of your research assignment and quiz.
+
+***NOTES**************************************
+
+Notes from class brainstorming session:
+At least 3 entities/1 repo
+
+Entity possibilities
+	1) Classes/Character types of magic users
+	2) Abilities
+	3) Lore/Story
+	4) Vehicles
+	5) Weapons
+	6) Pets/familiars
+
+• All entities need the four CRUD operations
+• Create a DB connection: username/pw same for all users for ease of use. One person start the DB script and everyone add to it with their tables, etc.
+• Everyone uses/creates a vertical slice that includes tables, data for the class, DAO, menu interface portion.
+• Each class does 1 specific thing
+
+Layers to consider: Service layer with calculations, Controller layer to get input, DAO layer
+
