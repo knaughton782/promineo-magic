@@ -34,7 +34,7 @@ CREATE TABLE abilities (
 );
 
 CREATE TABLE weapons (
-	weapons_id int(30) NOT NULL aushowto_increment,
+	weapons_id int(30) NOT NULL auto_increment,
     weaponName nvarchar(25),
     weaponType nvarchar(25),
 	-- Description of weapons
