@@ -50,7 +50,7 @@ CREATE TABLE pets (
 	FOREIGN KEY(class_Id) REFERENCES classes(class_Id)
 );
 
-Create Table Vehicles (
+CREATE TABLE Vehicles (
 	vehicle_ID int(10) NOT null auto_increment,
 	vehicleName varchar(25),
 	vehicleType varchar(25),
