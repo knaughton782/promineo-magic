@@ -16,12 +16,12 @@ Notes from class brainstorming session:
 At least 3 entities/1 repo
 
 Entity possibilities
-	1) Classes/Character types of magic users
-	2) Abilities
-	3) Lore/Story
-	4) Vehicles
-	5) Weapons
-	6) Pets/familiars
+	1) Classes/Character types of magic users : Leiland
+	2) Abilities : Kirsten & Leiland
+	3) Lore/Story : Will
+	4) Vehicles : Keith
+	5) Weapons : Daniel
+	6) Pets/familiars : Kirsten
 
 • All entities need the four CRUD operations
 • Create a DB connection: username/pw same for all users for ease of use. One person start the DB script and everyone add to it with their tables, etc.

@@ -2,12 +2,12 @@ CREATE DATABASE IF NOT EXISTS characterMaker;
 
 USE characterMaker;
 
-DROP TABLE IF EXISTS Classes;
-DROP TABLE IF EXISTS Abilities;
-DROP TABLE IF EXISTS Lore;
+DROP TABLE IF EXISTS Pets; 
 DROP TABLE IF EXISTS Transportation; -- Keith
 DROP TABLE IF EXISTS Weapons; -- Daniel
-DROP TABLE IF EXISTS Pets;
+DROP TABLE IF EXISTS Lore;
+DROP TABLE IF EXISTS Abilities;
+DROP TABLE IF EXISTS Classes;
 
 -- WHAT'S UP TEAM!  OK - HERE IS WHERE YOU WILL ADD YOUR TABLES FOR YOUR ASSIGNED OBJECTS. -L
 
@@ -21,7 +21,7 @@ CREATE TABLE classes (
 	PRIMARY KEY(class_Id)
 );
 
-CREATE TABLE ablilities (
+CREATE TABLE abilities (
 	ability_Id int(50) NOT NULL auto_increment,
 	abilityName nvarchar(25),
 	abilityType nvarchar(25),
@@ -33,9 +33,18 @@ CREATE TABLE ablilities (
 );
 
 CREATE TABLE weapons (
-	weapons_id int(30) NOT NULL auto_increment,
+	weapons_id int(30) NOT NULL aushowto_increment,
     weaponName nvarchar(25),
     weaponType nvarchar(25),
 	-- Description of weapons
     PRIMARY KEY(weapons_id)
+);
+
+CREATE TABLE pets (
+	pet_id int(50) NOT NULL auto_increment,
+	pet_name nvarchar(32),
+	pet_desc nvarchar(250),
+	-- Can add pet_type if additional info needed outside description 
+	PRIMARY KEY(pet_id),
+	FOREIGN KEY(class_Id) REFERENCES classes(class_Id)
 );
