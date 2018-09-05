@@ -56,7 +56,7 @@ CREATE TABLE Vehicles (
 	vehicleType varchar(25),
 	-- 2 Wheel Dirtbike, Three Wheeler, Side by Side, Truck, Dune Buggy
 	vehicleColor varchar(25),
-	vehiclePerks varchar(250),
+	vehicleStrength varchar(250),
 	vehicleWeakness varchar(250),
 	vehicleClass_ID int(10),
 	PRIMARY KEY(vehicle_ID),
