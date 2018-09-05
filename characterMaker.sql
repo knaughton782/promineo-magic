@@ -2,6 +2,7 @@ CREATE DATABASE IF NOT EXISTS characterMaker;
 
 USE characterMaker;
 
+--We may need to reorder these tables again depending on which tables reference each other. -K
 DROP TABLE IF EXISTS Pets; 
 DROP TABLE IF EXISTS Transportation; -- Keith
 DROP TABLE IF EXISTS Weapons; -- Daniel
