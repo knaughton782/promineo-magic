@@ -4,7 +4,7 @@ USE characterMaker;
 
 --We may need to reorder these tables again depending on which tables reference each other. -K
 DROP TABLE IF EXISTS Pets; 
-DROP TABLE IF EXISTS Transportation; -- Keith
+DROP TABLE IF EXISTS Vehicles; -- Keith
 DROP TABLE IF EXISTS Weapons; -- Daniel
 DROP TABLE IF EXISTS Lore;
 DROP TABLE IF EXISTS Abilities;
@@ -49,4 +49,17 @@ CREATE TABLE pets (
 	class_Id int(10) NOT NULL,
 	PRIMARY KEY(pet_id),
 	FOREIGN KEY(class_Id) REFERENCES classes(class_Id)
+);
+
+CREATE TABLE Vehicles (
+	vehicle_ID int(10) NOT null auto_increment,
+	vehicleName varchar(25),
+	vehicleType varchar(25),
+	-- 2 Wheel Dirtbike, Three Wheeler, Side by Side, Truck, Dune Buggy
+	vehicleColor varchar(25),
+	vehicleStrength varchar(250),
+	vehicleWeakness varchar(250),
+	vehicleClass_ID int(10),
+	PRIMARY KEY(vehicle_ID),
+	FOREIGN KEY(vehicleClass_ID) REFERENCES classes(class_id)
 );
