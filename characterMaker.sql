@@ -59,7 +59,6 @@ CREATE TABLE Vehicles (
 	-- 2 Wheel Dirtbike, Three Wheeler, Side by Side, Truck, Dune Buggy
 	speed int(125),	
 	Color varchar(25),
-	Strength varchar(250),
 	vehicleClass_ID int(10),
 	PRIMARY KEY(vehicle_ID),
 	FOREIGN KEY(vehicleClass_ID) REFERENCES classes(class_id)
