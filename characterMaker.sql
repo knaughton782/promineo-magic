@@ -47,6 +47,7 @@ CREATE TABLE pets (
 	pet_name nvarchar(32),
 	pet_desc nvarchar(250),
 	-- Can add pet_type if additional info needed outside description 
+	class_Id int(10) NOT NULL,
 	PRIMARY KEY(pet_id),
 	FOREIGN KEY(class_Id) REFERENCES classes(class_Id)
 );
