@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS Weapons; -- Daniel
 DROP TABLE IF EXISTS Lore;
 DROP TABLE IF EXISTS Abilities;
 DROP TABLE IF EXISTS Classes;
+DROP TABLE IF EXISTS CharacterMaker;
 
 -- WHAT'S UP TEAM!  OK - HERE IS WHERE YOU WILL ADD YOUR TABLES FOR YOUR ASSIGNED OBJECTS. -L
 
@@ -52,14 +53,21 @@ CREATE TABLE pets (
 );
 
 CREATE TABLE Vehicles (
-	vehicle_ID int(10) NOT null auto_increment,
-	vehicleName varchar(25),
-	vehicleType varchar(25),
+	CREATE TABLE Vehicles (
+	vehicle_ID int(10) not null auto_increment,
+	Name varchar(25),
+	Type varchar(25),
 	-- 2 Wheel Dirtbike, Three Wheeler, Side by Side, Truck, Dune Buggy
-	vehicleColor varchar(25),
-	vehicleStrength varchar(250),
-	vehicleWeakness varchar(250),
+	speed int(125),	
+	Color varchar(25),
 	vehicleClass_ID int(10),
 	PRIMARY KEY(vehicle_ID),
 	FOREIGN KEY(vehicleClass_ID) REFERENCES classes(class_id)
+);
+
+CREATE TABLE CharacterMaker (
+	character_ID int(4) NOT NULL auto_increment,
+	characterFirstName nvarchar(25),
+	characterLastName nvarchar(25),
+	PRIMARY KEY(character_ID),
 );
