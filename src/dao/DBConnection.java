@@ -26,7 +26,7 @@ public class DBConnection {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			return DBConnection.connection;
 		}
+		return DBConnection.connection;
 	}
 }
