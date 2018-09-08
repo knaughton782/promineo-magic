@@ -12,7 +12,7 @@ public class ConnectionManager {
 	private static Connection connection;
 	
 	
-	private static Connection getConnection() { 
+	public static Connection getConnection() { 
 		try {
 			if (connection == null) {
 				connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
