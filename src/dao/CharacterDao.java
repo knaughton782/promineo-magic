@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import entity.Pets;
+
 public class CharacterDao {
 
 	private Scanner sc = new Scanner(System.in);
@@ -23,33 +25,42 @@ public class CharacterDao {
 		connection = ConnectionManager.getConnection();
 		
 	}
+	
 	public List<Character> getCharacter() throws SQLException {
 		ResultSet rs = connection.prepareStatement(GET_CHARACTER).executeQuery();
 		
 		while (rs.next()) {
-			//characters.add(populateTeam(rs.getInt(1), rs.getString(2), rs.getString(3)));
+			characters.add(mapResults(rs.getString(1), rs.getString(2)));
 		}
 		
 		return characters;
 	}
+	
+	private Character mapResults(String firstName, String lastName) {
+		return new Character(firstName, lastName );
+	}
+	
 	public Character getCharacterById(int characterId) throws SQLException {
 		PreparedStatement ps = connection.prepareStatement(GET_CHARACTER_BY_ID);
 		ps.setInt(1, characterId);
 		ResultSet rs = ps.executeQuery();
 		rs.next();
-		return populateTeam(rs.getInt(1), rs.getString(2));
+		return mapResults(rs.getString(1), rs.getString(2));
 	}
+	
 	public void createNewCharacter(String characterFirstName, String characterLastName) throws SQLException {
 		PreparedStatement ps = connection.prepareStatement(CREATE_CHARACTER);
 		ps.setString(2, characterFirstName);
 		ps.setString(3, characterLastName);
 		ps.executeUpdate();
 	}
+	
 	public void deleteCharacterById(String characterLastName) throws SQLException {
 		sc.next();
 		if(sc.equals(characters)) {
 		PreparedStatement ps = connection.prepareStatement(DELETE_CHARACTER);
 		ps.setString(3, characterLastName);
 		ps.executeUpdate();
-	}}
+		}
+	}
 }
