@@ -4,13 +4,16 @@ public class Pets {
 	
 	private int petId;
 	private String petName;
-	private String petDescription;
-	private int petClassId;
+	private String petDesc;
+	
 	
 	public Pets(int petId, 
 				String petName, 
-				String petDescription,
-				int petClassId) {
+				String petDesc) {
+		this.petId = petId;
+		this.petName = petName;
+		this.petDesc = petDesc;
+		
 		
 	}
 
@@ -30,20 +33,12 @@ public class Pets {
 		this.petName = petName;
 	}
 
-	public String getPetDescription() {
-		return petDescription;
+	public String getPetDesc() {
+		return petDesc;
 	}
 
-	public void setPetDescription(String petDescription) {
-		this.petDescription = petDescription;
-	}
-
-	public int getPetClassId() {
-		return petClassId;
-	}
-
-	public void setPetClassId(int petClassId) {
-		this.petClassId = petClassId;
+	public void setPetDesc(String petDesc) {
+		this.petDesc = petDesc;
 	}
 
 }

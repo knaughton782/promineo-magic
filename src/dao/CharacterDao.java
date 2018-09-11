@@ -27,7 +27,7 @@ public class CharacterDao {
 		ResultSet rs = connection.prepareStatement(GET_CHARACTER).executeQuery();
 		
 		while (rs.next()) {
-			characters.add(populateTeam(rs.getInt(1), rs.getString(2), rs.getString(3)));
+			//characters.add(populateTeam(rs.getInt(1), rs.getString(2), rs.getString(3)));
 		}
 		
 		return characters;

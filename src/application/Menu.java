@@ -5,10 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
 
 import dao.VehiclesDao;
 import entity.Vehicles;
@@ -62,7 +58,7 @@ public class Menu {
 	
 	private void displayVehicles() throws SQLException {
 		List<Vehicles> brands = VehiclesDao.getVehicles();
-		for (Vehicles vehicle : Vehilces) {
+		for (Vehicles vehicle : Vehicles) {
 			System.out.println(vehicle.getVehilceId() + ": " + vehicle.getVehicles());
 		}
 	}
@@ -85,7 +81,7 @@ public class Menu {
 	private void deleteVehicleById() throws SQLException {
 		System.out.print("Enter vehicle id to delete:");
 		int id = Integer.parseInt(scanner.nextLine());
-		VehiclesDao.deleteVehicleById(id);
+		VehiclesDao.deleteVehiclesById(id);
 	}
 	
 	private void updateVehicleById() throws SQLException {

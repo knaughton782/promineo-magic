@@ -20,7 +20,7 @@ public class VehiclesDao {
 	private final String UPDATE_VEHICLE_ID_QUERY = "UPDATE FROM vehicles WHERE id = ?";
 	
 	public VehiclesDao() {
-		connection = Connection.getConnection();
+		connection = ConnectionManager.getConnection();
 	}
 	
 	public List<Vehicles> getVehiclesByClassId(int classId) throws SQLException {
