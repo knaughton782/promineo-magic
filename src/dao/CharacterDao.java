@@ -20,7 +20,7 @@ public class CharacterDao {
 	private final String GET_CHARACTER_BY_ID = "SELECT * FROM CHaracterMaker WHERE CHaracter_id = ?";
 	private final String GET_CHARACTER = "SELECT * FROM CharacterMaker";
 	private final String DELETE_CHARACTER = "DELETE FROM CharacterMaker WHERE id = ?";
-	private final String CREATE_CHARACTER= "INSERT INTO CharacterMaker(firstName, lastName,) VALUES(?,?)";
+	private final String CREATE_CHARACTER = "INSERT INTO CharacterMaker(firstName, lastName,) VALUES(?,?)";
 	
 	public CharacterDao() {
 		connection = ConnectionManager.getConnection();
@@ -56,11 +56,11 @@ public class CharacterDao {
 		ps.executeUpdate();
 	}
 	
-	public void deleteCharacterById(String characterLastName) throws SQLException {
+	public void deleteCharacterById(int characterId) throws SQLException {
 		sc.next();
-		if(sc.equals(characters)) {
+		if(sc.equals(characterId)) {
 		PreparedStatement ps = connection.prepareStatement(DELETE_CHARACTER);
-		ps.setString(3, characterLastName);
+		//ps.setString(3, characterLastName);
 		ps.executeUpdate();
 		}
 	}
