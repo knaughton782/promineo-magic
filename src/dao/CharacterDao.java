@@ -8,12 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import entity.CharacterMaker;
 import entity.Pets;
 
 public class CharacterDao {
 
 	private Scanner sc = new Scanner(System.in);
-	List<Character> characters = new ArrayList<Character>();
+	List<CharacterMaker> characters = new ArrayList<CharacterMaker>();
 
 	private Connection connection;
 	private final String GET_CHARACTER_BY_ID = "SELECT * FROM CHaracterMaker WHERE CHaracter_id = ?";
@@ -26,26 +27,26 @@ public class CharacterDao {
 		
 	}
 	
-	public List<Character> getCharacter() throws SQLException {
+	public List<CharacterMaker> getCharacter() throws SQLException {
 		ResultSet rs = connection.prepareStatement(GET_CHARACTER).executeQuery();
 		
 		while (rs.next()) {
-			characters.add(mapResults(rs.getString(1), rs.getString(2)));
+			characters.add(mapResults(rs.getInt(1), rs.getString(2), rs.getString(3)));
 		}
 		
 		return characters;
 	}
 	
-	private Character mapResults(String firstName, String lastName) {
-		return new Character(firstName, lastName );
+	private CharacterMaker mapResults(int characterId, String characterFirstName, String characterLastName) {
+		return new CharacterMaker(characterId, characterFirstName, characterLastName);
 	}
 	
-	public Character getCharacterById(int characterId) throws SQLException {
+	public CharacterMaker getCharacterById(int characterId) throws SQLException {
 		PreparedStatement ps = connection.prepareStatement(GET_CHARACTER_BY_ID);
 		ps.setInt(1, characterId);
 		ResultSet rs = ps.executeQuery();
 		rs.next();
-		return mapResults(rs.getString(1), rs.getString(2));
+		return mapResults(rs.getInt(1), rs.getString(2), rs.getString(3));
 	}
 	
 	public void createNewCharacter(String characterFirstName, String characterLastName) throws SQLException {
