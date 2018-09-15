@@ -97,4 +97,5 @@ public class Menu {
 		int vehicleId = Integer.parseInt(scanner.nextLine());
 		VehiclesDao.updateVehiclesId(name, type, speed, color, vehicleId);
 	}
+	
 }
