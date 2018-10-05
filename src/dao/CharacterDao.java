@@ -16,8 +16,8 @@ public class CharacterDao {
 	private Scanner sc = new Scanner(System.in);
 	List<Character> characters = new ArrayList<Character>();
 
-	private Connection connection;
-	private final String GET_CHARACTER_BY_ID = "SELECT * FROM CHaracterMaker WHERE CHaracter_id = ?";
+	private static Connection connection;
+	private final String GET_CHARACTER_BY_ID = "SELECT * FROM CHaracterMaker WHERE Character_id = ?";
 	private final String GET_CHARACTER = "SELECT * FROM CharacterMaker";
 	private final String DELETE_CHARACTER = "DELETE FROM CharacterMaker WHERE id = ?";
 	private final String CREATE_CHARACTER = "INSERT INTO CharacterMaker(firstName, lastName,) VALUES(?,?)";
@@ -41,7 +41,7 @@ public class CharacterDao {
 		return new Character(characterId, characterFirstName, characterLastName);
 	}
 	
-	public Character getCharacterById(int characterId) throws SQLException {
+	public static Character getCharacterById(int characterId) throws SQLException {
 		PreparedStatement ps = connection.prepareStatement(GET_CHARACTER_BY_ID);
 		ps.setInt(1, characterId);
 		ResultSet rs = ps.executeQuery();
