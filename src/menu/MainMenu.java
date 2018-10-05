@@ -27,15 +27,15 @@ public class MainMenu {
            
            try {
                if (selection.equals("1")) {
-            	   //CharacterMenu.printMenu    To call the character menu
+            	   CharacterMenu.printMenu    
                } else if (selection.equals("2")) {
-                   //
-               } else if (selection.equals("3")) {
-                   //
+            	   //PetMenu.printMenu    
+            	   } else if (selection.equals("3")) {
+            	   //WeaponsMenu.printMenu   
                } else if (selection.equals("4")) {
-                   //
+            	   //AbilitiesMenu.printMenu   
                } else if (selection.equals("5")) {
-            	   
+            	   //VehiclesMenu.printMenu   
                }
            } catch (SQLException e) {
                e.printStackTrace();
