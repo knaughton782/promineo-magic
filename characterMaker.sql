@@ -37,8 +37,8 @@ CREATE TABLE weapons (
     weapon_name nvarchar(25),
     weapon_type nvarchar(25),
 		weapon_strength int(3),
-	-- Description of weapons
-    PRIMARY KEY(weapons_id)
+    PRIMARY KEY(weapons_id),
+    FOREIGN KEY(character_id) REFERENCES classes (classes_id)
 );
 
 CREATE TABLE pets (
