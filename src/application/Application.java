@@ -5,12 +5,13 @@ import java.util.List;
 
 import dao.PetsDao;
 import entity.Pets;
+import menu.VehicleMenu;
 
 public class Application {
 
 	public static void main(String[] args) {
 		
-		Menu menu = new Menu();
+		VehicleMenu menu = new VehicleMenu();
 		menu.start();
 
 	}

@@ -1,4 +1,4 @@
-package application;
+package menu;
 
 import java.sql.SQLException;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 import dao.VehiclesDao;
 import entity.Vehicles;
 
-public class Menu {
+public class VehicleMenu {
 	
 	private VehiclesDao vehiclesDao = new VehiclesDao();
 	private Scanner scanner = new Scanner(System.in);
