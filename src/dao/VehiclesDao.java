@@ -67,4 +67,9 @@ public class VehiclesDao {
 		ps.setInt(5, classId);
 		ps.executeUpdate();
 	}
+
+	public static List<Vehicles> getVehicles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
