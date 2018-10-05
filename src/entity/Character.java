@@ -1,23 +1,23 @@
 package entity;
 
-public class CharacterMaker {
+public class Character {
 
-	private int character_ID;
+	private int characterId;
 	private String characterFirstName;
 	private String characterLastName;
 	
-	public CharacterMaker(int characterId, String characterFirstName, String characterLastName) {
-		this.setCharacter_ID(characterId);
+	public Character(int characterId, String characterFirstName, String characterLastName) {
+		this.setCharacterId(characterId);
 		this.setCharacterFirstName(characterFirstName);
 		this.setCharacterLastName(characterLastName);
 	}
 
-	public int getCharacter_ID() {
-		return character_ID;
+	public int getCharacterId() {
+		return characterId;
 	}
 
-	public void setCharacter_ID(int character_ID) {
-		this.character_ID = character_ID;
+	public void setCharacterId(int characterId) {
+		this.characterId = characterId;
 	}
 
 	public String getCharacterFirstName() {
@@ -35,4 +35,5 @@ public class CharacterMaker {
 	public void setCharacterLastName(String characterLastName) {
 		this.characterLastName = characterLastName;
 	}
+	
 }

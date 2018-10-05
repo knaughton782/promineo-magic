@@ -2,15 +2,15 @@ package entity;
 
 public class Vehicles {
 
-	private int vehicle_Id;
+	private int vehicleId;
 	private String name;
 	private String type;
 	private int speed;
 	private String color;
 		
 	
-	public Vehicles(int vehicle_Id, String name, String type, int speed, String color) {
-		this.setVehicle_Id(vehicle_Id);
+	public Vehicles(int vehicleId, String name, String type, int speed, String color) {
+		this.setVehicleId(vehicleId);
 		this.setName(name);
 		this.setType(type);
 		this.setSpeed(speed);
@@ -18,13 +18,13 @@ public class Vehicles {
 	
 	}
 
-	public int getVehicle_Id() {
-		return vehicle_Id;
+	public int getVehicleId() {
+		return vehicleId;
 	}
 
 
-	public void setVehicle_Id(int vehicle_Id) {
-		this.vehicle_Id = vehicle_Id;
+	public void setVehicleId(int vehicleId) {
+		this.vehicleId = vehicleId;
 	}
 
 

@@ -1,4 +1,4 @@
-package application;
+package menu;
 
 import java.sql.SQLException;
 import java.util.Arrays;
@@ -9,16 +9,16 @@ import java.util.Scanner;
 import dao.VehiclesDao;
 import entity.Vehicles;
 
-public class Menu {
+public class VehicleMenu {
 	
-	private VehiclesDao vehiclesDao = new VehiclesDao();
+	//private VehiclesDao vehiclesDao = new VehiclesDao();
 	private Scanner scanner = new Scanner(System.in);
 	private List<String> options = Arrays.asList(
-			"Display Vehicles",
-			"Display a Vehicle",
-			"Create Vehicle",
-			"Delete Vehicle",
-			"Update Vehicle");
+			"1) Display Vehicles",
+			"2) Display a Vehicle",
+			"3) Create Vehicle",
+			"4) Delete Vehicle",
+			"5) Update Vehicle");
 	
 	public void start() {
 		String selection = "";
@@ -33,11 +33,11 @@ public class Menu {
 				} else if (selection.equals("2")) {
 					displayVehicle();
 				} else if (selection.equals("3")) {
-					createVehicle();
+					createNewVehicle();
 				} else if (selection.equals("4")) {
-					deleteVehicle();
+					deleteVehicleById();
 				} else if (selection.equals("5")) {
-					updateVehicle();
+					updateVehicleById();
 					}
 				} catch (SQLException e) {
 				e.printStackTrace();	
@@ -58,16 +58,16 @@ public class Menu {
 	
 	private void displayVehicles() throws SQLException {
 		List<Vehicles> brands = VehiclesDao.getVehicles();
-		for (Vehicles vehicle : Vehicles) {
-			System.out.println(vehicle.getVehilceId() + ": " + vehicle.getVehicles());
+		for (Vehicles vehicle : brands) {
+			System.out.println(vehicle.getVehicleId() + ": " + vehicle.getVehicles());
 		}
 	}
 	
 	private void displayVehicle() throws SQLException {
 		System.out.print("Enter Vehicle id:");
 		int id = Integer.parseInt(scanner.nextLine());
-		Vehicles Vehicle = VehiclesDao.getVehiclesById(id);
-		System.out.println(Vehicles.getVehiclesId() + ": " + Vehicles.getVehicles());
+		Vehicles Vehicle = VehiclesDao.getVehiclesByClassId(id);
+		System.out.println(Vehicles.getVehicleId() + ": " + Vehicles.getVehicles());
 		
 		}
 
@@ -95,6 +95,7 @@ public class Menu {
 		String color = scanner.nextLine();
 		System.out.print("Enter vehicleId:");
 		int vehicleId = Integer.parseInt(scanner.nextLine());
-		VehiclesDao.updateVehiclesId(name, type, speed, color, vehicleId);
+		VehiclesDao.updateVehicleById(name, type, speed, color, vehicleId);
 	}
+	
 }
